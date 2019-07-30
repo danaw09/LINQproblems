@@ -11,7 +11,7 @@ namespace linqProblems
         
         List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
         List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Ian", "Mike" };
-        private object listOfStrings;
+        
         List<string> classGrades = new List<string>() { "90,100,82,89,55", "80,100,92,89,65", "93,81,78,84,69", "73,88,83,99,64", "98,100,66,74,55" };
         public double classAverageGrade;
 
@@ -30,7 +30,7 @@ namespace linqProblems
         public void ReturnStringNoDUplicate(List<string> names)
         {
 
-            var wordsNoDuplicate = names.Distinct().ToList();
+             var list = names.Distinct().ToList();
 
         }
 
@@ -38,12 +38,19 @@ namespace linqProblems
         {
             var temporaryListOfGrades = classGrades.OrderBy(g => g);
         }
-        
-        public static void AverageClassScore(List<string> classGrades)
+
+        private static void AverageClassScores(List<string> classGrades)
         {
-            List<int> classGrades = new List<int>();
-            double classAverage = 0;
-            int numberInClass = 0;
+            List<int> studentScores = new List<int>();
+            double average = 0;
+            
+
+            foreach (var student in classGrades)
+            {
+                classGrades = student.Split(',')
+                             .ToList();
+                             
+            }
         }
 
     }
