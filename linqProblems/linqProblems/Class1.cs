@@ -39,16 +39,20 @@ namespace linqProblems
             var temporaryListOfGrades = classGrades.OrderBy(g => g);
         }
 
-        private static void AverageClassScores(List<string> classGrades)
+        public static void AverageClassScores(List<string> classGrades)
         {
             List<int> studentScores = new List<int>();
             double average = 0;
             
 
-            foreach (var student in classGrades)
+            foreach (string student in classGrades)
             {
-                classGrades = student.Split(',')
-                             .ToList();
+                int[] grades = new int[5];
+                string[] studentGradeStrings = student.Split(',');
+                foreach ( studentGradeString)
+                {
+
+                }
                              
             }
         }
